@@ -1,0 +1,24 @@
+Test case id : F-11212121
+Test case title : To create/verify/delete vlans
+
+Step1: 
+in DUT1 configure below commands
+ create vlan 2-4094
+
+in DUT2 confgure below commands:
+ configure vlan default delete port all
+ disable port all
+
+Step2:
+in DUT1 
+ configure vlan 1-4094 add port 1:1 tagged
+ 
+Step3:
+in both dut1 and dut2 display show vlan
+
+Step4: Clean up DUTs
+in dut1 
+Delete vlan 2-4094
+in dut2 
+enable port all
+configure vlan default add port all
